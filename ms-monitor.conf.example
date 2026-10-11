@@ -1,0 +1,33 @@
+# MobileSignal Sunucu Monitörü — örnek yapılandırma
+# Kurulumda /etc/mobilesignal/monitor.conf olur. KEY=değer formatı.
+
+# Zorunlu: panelde oluşturduğun API anahtarı
+API_URL=https://mobilesignal.tr
+API_KEY=BURAYA_PANELDEN_ALDIGIN_ANAHTARI_YAZ
+SITE_AD=
+
+# Kontrol aralığı (sn, en az 15)
+CHECK_INTERVAL=60
+
+# Kritik eşikler (0=o kontrol kapalı)
+CPU_CRIT=85
+RAM_CRIT=85
+DISK_CRIT=90
+# 5-dakikalık load eşiği; 0=otomatik (cpu_sayısı x 2)
+LOAD_CRIT=0
+# Tek process eşikleri
+PROC_CPU_CRIT=50
+PROC_RAM_CRIT=20
+
+# Raporda kaç process / URL gösterilsin
+TOP_N=5
+# Aynı uyarı en fazla kaç dakikada bir gelsin (spam koruması)
+ALERT_COOLDOWN_DK=15
+
+# Butonla sorgu: telefondaki eylem butonu bu porta istek atar (0=kapat)
+WEBHOOK_PORT=9273
+# Buton URL'sine ?key=... olarak eklenecek gizli kelime (şart önerilir)
+WEBHOOK_SECRET=BURAYA_UZUN_RASTGELE_BIR_KELIME_YAZ
+
+# Access-log analizinde taranacak satır sayısı
+LOG_TAIL=2000
